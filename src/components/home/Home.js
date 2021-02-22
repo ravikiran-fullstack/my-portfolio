@@ -1,10 +1,10 @@
 import React from 'react'
 import NavBar from "../navbar/NavBar";
 
-const Home = () => {
+const Home = ({ isDark, handleThemeChange}) => {
   return (
     <div>
-      <NavBar/>
+      <NavBar handleThemeChange={ handleThemeChange}/>
       <h1>My Portfolio</h1>
     </div>
   )

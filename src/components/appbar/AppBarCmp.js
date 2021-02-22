@@ -6,8 +6,7 @@ import {
   IconButton,
   Typography,
   Button,
-  Tabs,
-  Tab,
+  Switch
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { green } from "@material-ui/core/colors";
@@ -48,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     padding: '10px 10px',
     textTransform: 'uppercase',
+    textAlign: 'center',
     '&:hover': {
       background: "#eefaed",
       color: '#15e80e',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppBarCmp = ({ toggleDrawer }) => {
+const AppBarCmp = ({ toggleDrawer, handleThemeChange, isDark }) => {
   const classes = useStyles();
   const value = 1;
   return (
@@ -105,10 +105,11 @@ const AppBarCmp = ({ toggleDrawer }) => {
           <Button
             variant="contained"
             color="secondary"
-            style={{ marginTop: "5px" }}
+            style={{color:'white'}}
           >
             My Resume
           </Button>
+          <Switch checked={isDark} onClick={handleThemeChange} />
         </Toolbar>
       </AppBar>
     </div>
