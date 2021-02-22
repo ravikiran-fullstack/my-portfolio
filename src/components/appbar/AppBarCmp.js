@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       visibility: "visible",
     },
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       visibility: "hidden",
     },
   },
@@ -41,16 +41,19 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     // border: "1px solid red",
-    width: "10%",
+    width: "12%",
     color: '#90cc30',
     marginRight: '5px',
     borderRadius: '5px',
+    cursor: 'pointer',
+    padding: '10px 10px',
+    textTransform: 'uppercase',
     '&:hover': {
-      background: "#121212",
-      color: 'white',
+      background: "#eefaed",
+      color: '#15e80e',
       zIndex: 500
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       // border: "1px solid red",
       display: "none",
     },
@@ -87,18 +90,18 @@ const AppBarCmp = ({ toggleDrawer }) => {
           <Typography variant="h4" className={classes.logo}>
             My Portfolio
           </Typography>
-          <Tabs value={value} className={classes.tabs}>
-            <Tab label="About Me"></Tab>
-          </Tabs>
-          <Tabs className={classes.tabs}>
-            <Tab label="Experience" value="2"></Tab>
-          </Tabs>
-          <Tabs className={classes.tabs}>
-            <Tab label="Projects" value="3"></Tab>
-          </Tabs>
-          <Tabs className={classes.tabs}>
-            <Tab label="Contact Me" value="4"></Tab>
-          </Tabs>
+          <div value={value} className={classes.tabs}>
+            <div>About Me</div>
+          </div>
+          <div className={classes.tabs}>
+            <div>Experience</div>
+          </div>
+          <div className={classes.tabs}>
+            <div>Projects</div>
+          </div>
+          <div className={classes.tabs}>
+            <div>Contact Me</div>
+          </div>
           <Button
             variant="contained"
             color="secondary"
